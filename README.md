@@ -10,6 +10,7 @@ A modern, responsive flight search application built with React and Vite, featur
 ## 🌟 Features
 
 ### 🎨 **Design & UI**
+
 - **Authentic Google Flights Dark Theme** - Pixel-perfect recreation of Google's dark mode
 - **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
 - **Google Sans Typography** - Uses Google's official font family
@@ -17,6 +18,7 @@ A modern, responsive flight search application built with React and Vite, featur
 - **Official Google Hero Image** - Integrated Google Flights SVG animation
 
 ### 🔍 **Flight Search**
+
 - **Real-time Flight Search** - Powered by SkyScanner API via RapidAPI
 - **Airport Selection** - Dropdown with major international airports
 - **Date Selection** - Calendar picker with date validation
@@ -25,6 +27,7 @@ A modern, responsive flight search application built with React and Vite, featur
 - **Mock Data Fallback** - Development-friendly fallback data
 
 ### 🛠️ **Technical Features**
+
 - **Modern React** - Built with React 18+ and functional components
 - **Vite Build System** - Lightning-fast development and build process
 - **Tailwind CSS** - Utility-first CSS framework with custom Google theme
@@ -35,6 +38,7 @@ A modern, responsive flight search application built with React and Vite, featur
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 16.0 or higher
 - npm or yarn package manager
 - RapidAPI account (for flight data)
@@ -42,17 +46,20 @@ A modern, responsive flight search application built with React and Vite, featur
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/aadilkhan08/Google-Flight.git
    cd Google-Flight
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    # The .env file is already configured with API credentials
    # VITE_API_KEY=your_rapidapi_key_here
@@ -60,6 +67,7 @@ A modern, responsive flight search application built with React and Vite, featur
    ```
 
 4. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -100,6 +108,7 @@ Google-Flight/
 ## 🎨 Design System
 
 ### Color Palette
+
 The application uses Google's official dark theme colors:
 
 ```css
@@ -123,6 +132,7 @@ The application uses Google's official dark theme colors:
 ```
 
 ### Typography
+
 - **Primary Font**: Google Sans
 - **Fallbacks**: Roboto, Helvetica Neue, Arial, sans-serif
 - **Weights**: 300, 400, 500, 600, 700
@@ -130,6 +140,7 @@ The application uses Google's official dark theme colors:
 ## 🔧 Configuration
 
 ### Environment Variables
+
 ```env
 # Required for API functionality
 VITE_API_KEY=your_rapidapi_key_here
@@ -137,6 +148,7 @@ VITE_API_HOST=https://sky-scrapper.p.rapidapi.com/api/v1
 ```
 
 ### Tailwind Configuration
+
 Custom Google-themed colors and utilities are defined in `tailwind.config.js`:
 
 ```javascript
@@ -151,6 +163,7 @@ colors: {
 ## 🛩️ API Integration
 
 ### Supported Airports
+
 The application includes 15 major international airports:
 
 - **Americas**: New York (JFK), Los Angeles (LAX), San Francisco (SFO), Chicago (ORD), Miami (MIA), Las Vegas (LAS), Boston (BOS)
@@ -158,6 +171,7 @@ The application includes 15 major international airports:
 - **Asia-Pacific**: Tokyo (NRT), Dubai (DXB), Singapore (SIN)
 
 ### Error Handling
+
 - API rate limiting gracefully handled
 - Network errors with user-friendly messages
 - Fallback to mock data during development
@@ -166,11 +180,13 @@ The application includes 15 major international airports:
 ## 📱 Responsive Design
 
 ### Breakpoints
+
 - **Mobile**: < 768px
 - **Tablet**: 768px - 1024px
 - **Desktop**: > 1024px
 
 ### Mobile Optimizations
+
 - Touch-friendly interface elements
 - Optimized form layouts
 - Responsive typography scaling
@@ -179,6 +195,7 @@ The application includes 15 major international airports:
 ## 🧪 Development
 
 ### Available Scripts
+
 ```bash
 npm run dev          # Start development server
 npm run build        # Build for production
@@ -187,6 +204,7 @@ npm run lint         # Run ESLint
 ```
 
 ### Code Style
+
 - ESLint configuration included
 - Prettier formatting recommended
 - Consistent component structure
@@ -195,18 +213,22 @@ npm run lint         # Run ESLint
 ## 🚀 Deployment
 
 ### Build Process
+
 ```bash
 npm run build
 ```
 
 ### Deployment Options
+
 - **Vercel**: Recommended for React apps
 - **Netlify**: Easy static site deployment
 - **GitHub Pages**: Free hosting option
 - **Traditional hosting**: Upload `dist/` folder
 
 ### Environment Variables for Production
+
 Ensure your hosting platform has the required environment variables:
+
 - `VITE_API_KEY`
 - `VITE_API_HOST`
 
@@ -219,6 +241,7 @@ Ensure your hosting platform has the required environment variables:
 5. Open a Pull Request
 
 ### Development Guidelines
+
 - Follow existing code style and patterns
 - Add comments for complex logic
 - Test on multiple screen sizes
@@ -244,4 +267,4 @@ For support, please open an issue on GitHub or contact the development team.
 
 **Built with ❤️ by [Aadil Khan](https://github.com/aadilkhan08)**
 
-*Making flight search beautiful, one pixel at a time.* ✈️
+_Making flight search beautiful, one pixel at a time._ ✈️
