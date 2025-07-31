@@ -25,12 +25,12 @@ const SearchForm = ({ onSearch, loading }) => {
   }
 
   return (
-    <div className='bg-white rounded-lg shadow-google border border-google-border p-6 mb-8 max-w-4xl mx-auto'>
+    <div className='bg-google-surface rounded-lg shadow-google-dark border border-google-border p-6 mb-8 max-w-4xl mx-auto'>
       <form onSubmit={handleSubmit}>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-1 mb-4'>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-0 mb-4'>
           {/* From Input */}
           <div className='relative'>
-            <div className='border border-google-border rounded-l-lg md:rounded-r-none hover:shadow-google focus-within:shadow-google-lg focus-within:border-google-blue transition-all'>
+            <div className='border border-google-border rounded-l-lg md:rounded-r-none hover:border-google-blue focus-within:border-google-border transition-all bg-google-bg-secondary'>
               <label className='block text-xs text-google-text-secondary px-4 pt-3 pb-1 font-medium'>
                 From
               </label>
@@ -38,12 +38,21 @@ const SearchForm = ({ onSearch, loading }) => {
                 name='from'
                 value={searchData.from}
                 onChange={handleInputChange}
-                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none appearance-none cursor-pointer'
+                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none appearance-none cursor-pointer focus:ring-0 focus:outline-none focus:border-none'
                 required
               >
-                <option value=''>Where from?</option>
+                <option
+                  value=''
+                  className='bg-google-bg-secondary text-google-text'
+                >
+                  Where from?
+                </option>
                 {Object.keys(AIRPORT_CODES).map(city => (
-                  <option key={city} value={AIRPORT_CODES[city]}>
+                  <option
+                    key={city}
+                    value={AIRPORT_CODES[city]}
+                    className='bg-google-bg-secondary text-google-text'
+                  >
                     {city}
                   </option>
                 ))}
@@ -68,7 +77,7 @@ const SearchForm = ({ onSearch, loading }) => {
 
           {/* To Input */}
           <div className='relative'>
-            <div className='border border-google-border border-l-0 md:border-l hover:shadow-google focus-within:shadow-google-lg focus-within:border-google-blue transition-all'>
+            <div className='border border-google-border -ml-px hover:border-google-blue focus-within:border-google-border transition-all bg-google-bg-secondary'>
               <label className='block text-xs text-google-text-secondary px-4 pt-3 pb-1 font-medium'>
                 To
               </label>
@@ -76,12 +85,21 @@ const SearchForm = ({ onSearch, loading }) => {
                 name='to'
                 value={searchData.to}
                 onChange={handleInputChange}
-                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none appearance-none cursor-pointer'
+                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none appearance-none cursor-pointer focus:ring-0 focus:outline-none focus:border-none'
                 required
               >
-                <option value=''>Where to?</option>
+                <option
+                  value=''
+                  className='bg-google-bg-secondary text-google-text'
+                >
+                  Where to?
+                </option>
                 {Object.keys(AIRPORT_CODES).map(city => (
-                  <option key={city} value={AIRPORT_CODES[city]}>
+                  <option
+                    key={city}
+                    value={AIRPORT_CODES[city]}
+                    className='bg-google-bg-secondary text-google-text'
+                  >
                     {city}
                   </option>
                 ))}
@@ -106,7 +124,7 @@ const SearchForm = ({ onSearch, loading }) => {
 
           {/* Date Input */}
           <div className='relative'>
-            <div className='border border-google-border border-l-0 md:border-l hover:shadow-google focus-within:shadow-google-lg focus-within:border-google-blue transition-all'>
+            <div className='border border-google-border -ml-px hover:border-google-blue focus-within:border-google-border transition-all bg-google-bg-secondary'>
               <label className='block text-xs text-google-text-secondary px-4 pt-3 pb-1 font-medium'>
                 Departure
               </label>
@@ -116,7 +134,7 @@ const SearchForm = ({ onSearch, loading }) => {
                 value={searchData.date}
                 onChange={handleInputChange}
                 min={new Date().toISOString().split('T')[0]}
-                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none'
+                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none focus:ring-0 focus:outline-none focus:border-none [color-scheme:dark]'
                 required
               />
             </div>
@@ -124,7 +142,7 @@ const SearchForm = ({ onSearch, loading }) => {
 
           {/* Passengers Input */}
           <div className='relative'>
-            <div className='border border-google-border border-l-0 md:border-l rounded-r-lg md:rounded-l-none hover:shadow-google focus-within:shadow-google-lg focus-within:border-google-blue transition-all'>
+            <div className='border border-google-border -ml-px rounded-r-lg hover:border-google-blue focus-within:border-google-border transition-all bg-google-bg-secondary'>
               <label className='block text-xs text-google-text-secondary px-4 pt-3 pb-1 font-medium'>
                 Passengers
               </label>
@@ -132,10 +150,14 @@ const SearchForm = ({ onSearch, loading }) => {
                 name='passengers'
                 value={searchData.passengers}
                 onChange={handleInputChange}
-                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none appearance-none cursor-pointer'
+                className='w-full px-4 pb-3 text-google-text bg-transparent border-none outline-none appearance-none cursor-pointer focus:ring-0 focus:outline-none focus:border-none'
               >
                 {[1, 2, 3, 4, 5, 6].map(num => (
-                  <option key={num} value={num}>
+                  <option
+                    key={num}
+                    value={num}
+                    className='bg-google-bg-secondary text-google-text'
+                  >
                     {num} {num === 1 ? 'passenger' : 'passengers'}
                   </option>
                 ))}
@@ -164,11 +186,11 @@ const SearchForm = ({ onSearch, loading }) => {
           <button
             type='submit'
             disabled={loading}
-            className='bg-google-blue hover:bg-google-blue-hover disabled:bg-google-grey text-white px-8 py-3 rounded-full font-medium transition-colors duration-200 flex items-center space-x-2 shadow-google'
+            className='bg-google-blue hover:bg-google-blue-hover disabled:bg-google-grey text-google-bg-primary px-8 py-3 rounded-full font-medium transition-colors duration-200 flex items-center space-x-2 shadow-google'
           >
             {loading ? (
               <>
-                <div className='w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin'></div>
+                <div className='w-4 h-4 border-2 border-google-bg-primary border-t-transparent rounded-full animate-spin'></div>
                 <span>Searching...</span>
               </>
             ) : (

@@ -8,6 +8,7 @@
   font-family: 'Google Sans', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color-scheme: dark;
 }
 
 * {
@@ -16,13 +17,45 @@
 
 body {
   margin: 0;
-  background-color: #fafafa;
-  color: #3c4043;
+  background-color: #202124;
+  color: #e8eaed;
   font-size: 14px;
 }
 
 #root {
   min-height: 100vh;
+  background-color: #202124;
+}
+
+/* Dark theme scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #202124;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5f6368;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa0a6;
+}
+
+/* Dark theme for form elements */
+input,
+select,
+textarea {
+  color-scheme: dark;
+}
+
+/* Custom styles for date picker in dark mode */
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
 }
 
 button {
@@ -32,27 +65,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

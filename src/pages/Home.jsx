@@ -94,9 +94,9 @@ const Home = () => {
   }
 
   return (
-    <div className='min-h-screen bg-white font-google'>
+    <div className='min-h-screen bg-google-bg-primary font-google'>
       {/* Google Header */}
-      <header className='bg-white border-b border-google-border'>
+      <header className='bg-google-bg-primary border-b border-google-border'>
         <div className='max-w-7xl mx-auto px-6 py-3'>
           <div className='flex items-center justify-between'>
             <div className='flex items-center space-x-8'>
@@ -117,7 +117,7 @@ const Home = () => {
               </div>
             </div>
             <div className='flex items-center space-x-4'>
-              <button className='px-4 py-2 text-google-blue text-sm font-medium hover:bg-google-light-grey rounded'>
+              <button className='px-4 py-2 text-google-blue text-sm font-medium hover:bg-google-surface rounded'>
                 Sign in
               </button>
             </div>
@@ -125,12 +125,18 @@ const Home = () => {
         </div>
       </header>
 
+      <img
+        src='https://www.gstatic.com/travel-frontend/animation/hero/flights_nc_dark_theme_4.svg'
+        alt='Google Flights Hero'
+        className='w-62 h-80 mx-auto mb-4'
+      />
+
       {/* Main Content Area */}
-      <main className='bg-white'>
+      <main className='bg-google-bg-primary '>
         {/* Hero Section with Search */}
-        <div className='max-w-7xl mx-auto px-6 py-8'>
+        <div className='max-w-7xl mx-auto px-6 py-8 '>
           <div className='text-center mb-8'>
-            <h1 className='text-3xl font-normal text-google-text mb-2'>
+            <h1 className='text-5xl font-normal text-google-text mb-8'>
               Flights
             </h1>
             <SearchForm onSearch={handleSearch} loading={loading} />
@@ -138,13 +144,13 @@ const Home = () => {
         </div>
 
         {/* Results Section */}
-        <div className='bg-google-light-grey min-h-[60vh]'>
+        <div className='bg-google-bg-primary min-h-[60vh]'>
           <div className='max-w-7xl mx-auto px-6 py-6'>
             {loading && <Loader />}
 
             {error && (
-              <div className='bg-white rounded-lg border border-google-border p-6 mb-4'>
-                <div className='flex items-center text-red-600'>
+              <div className='bg-google-surface rounded-lg border border-google-border p-6 mb-4'>
+                <div className='flex items-center text-red-400'>
                   <svg
                     className='w-5 h-5 mr-3'
                     fill='currentColor'
@@ -157,7 +163,7 @@ const Home = () => {
                     />
                   </svg>
                   <div>
-                    <h3 className='font-medium'>Error</h3>
+                    <h3 className='font-medium text-google-text'>Error</h3>
                     <p className='text-sm text-google-text-secondary mt-1'>
                       {error}
                     </p>
@@ -167,7 +173,7 @@ const Home = () => {
             )}
 
             {!loading && searchPerformed && flights.length === 0 && !error && (
-              <div className='bg-white rounded-lg border border-google-border p-12 text-center'>
+              <div className='bg-google-surface rounded-lg border border-google-border p-12 text-center'>
                 <div className='text-google-text-secondary mb-4'>
                   <svg
                     className='w-16 h-16 mx-auto'
@@ -211,7 +217,7 @@ const Home = () => {
 
             {/* Default state - before search */}
             {!searchPerformed && !loading && (
-              <div className='bg-white rounded-lg border border-google-border p-16 text-center'>
+              <div className='bg-google-surface rounded-lg border border-google-border p-16 text-center'>
                 <div className='text-google-text-secondary mb-6'>
                   <svg
                     className='w-20 h-20 mx-auto'

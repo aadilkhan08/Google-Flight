@@ -38,7 +38,7 @@ const FlightCard = ({ flight }) => {
   // Check for our mock flight structure (from price calendar)
   if (flight.departure && flight.arrival && !flight.legs) {
     return (
-      <div className='bg-white rounded-lg border border-google-border hover:shadow-google-lg transition-shadow p-4 mb-2'>
+      <div className='bg-google-surface rounded-lg border border-google-border hover:shadow-google-lg transition-shadow p-4 mb-2'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center space-x-8'>
             <div className='text-sm text-google-text-secondary'>
@@ -104,7 +104,7 @@ const FlightCard = ({ flight }) => {
     : null
 
   return (
-    <div className='bg-white rounded-lg border border-google-border hover:shadow-google-lg transition-shadow duration-200 p-6 mb-2'>
+    <div className='bg-google-surface rounded-lg border border-google-border hover:shadow-google-lg transition-shadow duration-200 p-6 mb-2'>
       <div className='flex items-center justify-between'>
         {/* Left section - Flight details */}
         <div className='flex-1'>
@@ -174,7 +174,7 @@ const FlightCard = ({ flight }) => {
           )}
           <button
             onClick={() => window.open(bestAgent?.url, '_blank')}
-            className='bg-google-blue hover:bg-google-blue-hover text-white px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 shadow-google'
+            className='bg-google-blue hover:bg-google-blue-hover text-google-bg-primary px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 shadow-google'
           >
             Select
           </button>
@@ -224,7 +224,7 @@ const FlightCard = ({ flight }) => {
                   </div>
                   <button
                     onClick={() => window.open(option.agents[0].url, '_blank')}
-                    className='text-google-blue hover:bg-google-light-grey px-3 py-1 rounded text-sm'
+                    className='text-google-blue hover:bg-google-surface px-3 py-1 rounded text-sm'
                   >
                     Select
                   </button>

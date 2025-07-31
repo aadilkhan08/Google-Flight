@@ -1,4 +1,26 @@
-/* App-specific styles */
+/* App-specific styles for dark theme */
 .app {
   min-height: 100vh;
+  background-color: #202124;
+  color: #e8eaed;
+}
+
+/* Ensure all elements inherit dark theme */
+* {
+  color-scheme: dark;
+}
+
+/* Dark theme for any remaining elements */
+a {
+  color: #8ab4f8;
+}
+
+a:hover {
+  color: #93baf9;
+}
+
+/* Focus states */
+*:focus {
+  outline: 2px solid #8ab4f8;
+  outline-offset: 2px;
 }

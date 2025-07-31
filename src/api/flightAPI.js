@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const API_KEY = 'd42868545fmshb435828ac08ac02p139e45jsn5c57f3b5941f'
-const BASE_URL = 'https://sky-scrapper.p.rapidapi.com/api/v1'
+const API_KEY = import.meta.env.VITE_API_KEY
+const BASE_URL = import.meta.env.VITE_API_HOST
 
 const headers = {
   'X-RapidAPI-Key': API_KEY,

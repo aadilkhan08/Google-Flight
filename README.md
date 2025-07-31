@@ -1,120 +1,247 @@
-# Google Flights Clone
+# ✈️ Google Flights Dark Theme Clone
 
-A modern flight search application built with React, Vite, and Tailwind CSS that replicates the Google Flights experience using the SkyScapper API.
+A modern, responsive flight search application built with React and Vite, featuring a beautiful dark theme that matches Google Flights' design language.
 
-## ✈️ Features
+![Google Flights Dark Theme](https://img.shields.io/badge/Theme-Dark-000000?style=for-the-badge&logo=google&logoColor=white)
+![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-- **Flight Search**: Search flights by origin, destination, date, and passenger count
-- **Real-time Results**: Get live flight data with pricing from multiple booking agents
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Price Comparison**: Compare prices across different booking platforms
-- **Modern UI**: Clean, intuitive interface similar to Google Flights
+## 🌟 Features
 
-## 🚀 Getting Started
+### 🎨 **Design & UI**
+- **Authentic Google Flights Dark Theme** - Pixel-perfect recreation of Google's dark mode
+- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
+- **Google Sans Typography** - Uses Google's official font family
+- **Smooth Animations** - Subtle transitions and hover effects
+- **Official Google Hero Image** - Integrated Google Flights SVG animation
+
+### 🔍 **Flight Search**
+- **Real-time Flight Search** - Powered by SkyScanner API via RapidAPI
+- **Airport Selection** - Dropdown with major international airports
+- **Date Selection** - Calendar picker with date validation
+- **Passenger Count** - Support for 1-6 passengers
+- **Price Calendar** - Alternative pricing data when live flights unavailable
+- **Mock Data Fallback** - Development-friendly fallback data
+
+### 🛠️ **Technical Features**
+- **Modern React** - Built with React 18+ and functional components
+- **Vite Build System** - Lightning-fast development and build process
+- **Tailwind CSS** - Utility-first CSS framework with custom Google theme
+- **API Integration** - RapidAPI SkyScanner integration
+- **Error Handling** - Comprehensive error states and user feedback
+- **Loading States** - Beautiful loading animations and skeleton screens
+
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js 16.0 or higher
+- npm or yarn package manager
+- RapidAPI account (for flight data)
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/aadilkhan08/Google-Flight.git
+   cd Google-Flight
+   ```
 
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   # The .env file is already configured with API credentials
+   # VITE_API_KEY=your_rapidapi_key_here
+   # VITE_API_HOST=https://sky-scrapper.p.rapidapi.com/api/v1
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## 📁 Project Structure
+
+```
+Google-Flight/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── api/
+│   │   └── flightAPI.js          # API integration & airport codes
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── FlightCard.jsx        # Individual flight result display
+│   │   ├── Loader.jsx            # Loading spinner component
+│   │   └── SearchForm.jsx        # Flight search form
+│   ├── pages/
+│   │   └── Home.jsx              # Main page component
+│   ├── App.css                   # Global app styles
+│   ├── App.jsx                   # Root component
+│   ├── index.css                 # Global CSS & Tailwind imports
+│   └── main.jsx                  # App entry point
+├── .env                          # Environment variables
+├── eslint.config.js              # ESLint configuration
+├── index.html                    # HTML template
+├── package.json                  # Dependencies & scripts
+├── postcss.config.js             # PostCSS configuration
+├── tailwind.config.js            # Tailwind CSS configuration
+└── vite.config.js                # Vite configuration
+```
+
+## 🎨 Design System
+
+### Color Palette
+The application uses Google's official dark theme colors:
+
+```css
+/* Primary Colors */
+--google-bg-primary: #202124      /* Main background */
+--google-bg-secondary: #303134    /* Secondary background */
+--google-surface: #303134         /* Card surfaces */
+
+/* Text Colors */
+--google-text: #e8eaed            /* Primary text */
+--google-text-secondary: #9aa0a6  /* Secondary text */
+--google-text-muted: #5f6368      /* Muted text */
+
+/* Accent Colors */
+--google-blue: #8ab4f8            /* Primary blue (dark theme) */
+--google-blue-hover: #93baf9      /* Blue hover state */
+
+/* Borders */
+--google-border: #3c4043          /* Primary borders */
+--google-border-light: #5f6368    /* Light borders */
+```
+
+### Typography
+- **Primary Font**: Google Sans
+- **Fallbacks**: Roboto, Helvetica Neue, Arial, sans-serif
+- **Weights**: 300, 400, 500, 600, 700
+
+## 🔧 Configuration
+
+### Environment Variables
+```env
+# Required for API functionality
+VITE_API_KEY=your_rapidapi_key_here
+VITE_API_HOST=https://sky-scrapper.p.rapidapi.com/api/v1
+```
+
+### Tailwind Configuration
+Custom Google-themed colors and utilities are defined in `tailwind.config.js`:
+
+```javascript
+colors: {
+  'google-blue': '#8ab4f8',
+  'google-bg-primary': '#202124',
+  'google-surface': '#303134',
+  // ... more colors
+}
+```
+
+## 🛩️ API Integration
+
+### Supported Airports
+The application includes 15 major international airports:
+
+- **Americas**: New York (JFK), Los Angeles (LAX), San Francisco (SFO), Chicago (ORD), Miami (MIA), Las Vegas (LAS), Boston (BOS)
+- **Europe**: London (LHR), Paris (CDG), Frankfurt (FRA), Amsterdam (AMS), Istanbul (IST)
+- **Asia-Pacific**: Tokyo (NRT), Dubai (DXB), Singapore (SIN)
+
+### Error Handling
+- API rate limiting gracefully handled
+- Network errors with user-friendly messages
+- Fallback to mock data during development
+- Comprehensive logging for debugging
+
+## 📱 Responsive Design
+
+### Breakpoints
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+### Mobile Optimizations
+- Touch-friendly interface elements
+- Optimized form layouts
+- Responsive typography scaling
+- Mobile-specific navigation patterns
+
+## 🧪 Development
+
+### Available Scripts
 ```bash
-git clone <repository-url>
-cd google-flight
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
 ```
 
-2. Install dependencies:
+### Code Style
+- ESLint configuration included
+- Prettier formatting recommended
+- Consistent component structure
+- Comprehensive commenting
 
+## 🚀 Deployment
+
+### Build Process
 ```bash
-npm install
+npm run build
 ```
 
-3. Start the development server:
+### Deployment Options
+- **Vercel**: Recommended for React apps
+- **Netlify**: Easy static site deployment
+- **GitHub Pages**: Free hosting option
+- **Traditional hosting**: Upload `dist/` folder
 
-```bash
-npm run dev
-```
-
-4. Open your browser and navigate to `http://localhost:5173`
-
-## 🛠️ Built With
-
-- **React 18** - Frontend library
-- **Vite** - Build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework
-- **Axios** - HTTP client for API requests
-- **SkyScapper API** - Flight data provider via RapidAPI
-
-## 📱 API Integration
-
-This application uses the SkyScapper API from RapidAPI to fetch flight data. The API provides:
-
-- Flight search results
-- Multiple pricing options
-- Airline information
-- Route details with stops
-- Real-time availability
-
-## 🎨 Design
-
-The interface closely follows Google Flights design principles:
-
-- Clean, minimalist layout
-- Blue accent colors (#1976d2)
-- Card-based flight results
-- Intuitive search form
-- Loading states and error handling
-
-## 📦 Project Structure
-
-```
-src/
-├── api/
-│   └── flightAPI.js          # API integration
-├── components/
-│   ├── SearchForm.jsx        # Flight search form
-│   ├── FlightCard.jsx        # Individual flight result
-│   └── Loader.jsx           # Loading component
-├── pages/
-│   └── Home.jsx             # Main page
-├── App.jsx                  # Root component
-└── main.jsx                 # Entry point
-```
-
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## 🌟 Future Enhancements
-
-- Add filters (airlines, stops, price range)
-- Implement round-trip search
-- Add flight details modal
-- Include seat selection
-- Add user preferences and favorites
-- Implement advanced sorting options
-
-## 📄 License
-
-This project is for educational purposes and demonstrates modern React development practices.
+### Environment Variables for Production
+Ensure your hosting platform has the required environment variables:
+- `VITE_API_KEY`
+- `VITE_API_HOST`
 
 ## 🤝 Contributing
 
-Feel free to submit issues and enhancement requests!+ Vite
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Development Guidelines
+- Follow existing code style and patterns
+- Add comments for complex logic
+- Test on multiple screen sizes
+- Ensure dark theme consistency
 
-Currently, two official plugins are available:
+## 📄 License
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Expanding the ESLint configuration
+## 🙏 Acknowledgments
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Google Flights** - Design inspiration and UI patterns
+- **SkyScanner API** - Flight data integration
+- **React Team** - Amazing frontend framework
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Next generation frontend tooling
+
+## 📞 Support
+
+For support, please open an issue on GitHub or contact the development team.
+
+---
+
+**Built with ❤️ by [Aadil Khan](https://github.com/aadilkhan08)**
+
+*Making flight search beautiful, one pixel at a time.* ✈️
